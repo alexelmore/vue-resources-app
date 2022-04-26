@@ -45,6 +45,9 @@ export default {
       this.$refs.resourceForm.reset();
     },
   },
+  emits: {
+    'new-resource': String,
+  },
   computed: {
     constructId() {
       let id = Math.floor(Math.random() * 1000);
