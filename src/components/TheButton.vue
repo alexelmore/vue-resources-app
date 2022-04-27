@@ -1,12 +1,11 @@
 <template>
-  <button :type="type" :class="mode">{{ title }}</button>
+  <button :type="type" :class="mode"><slot></slot></button>
 </template>
 
 <script>
 export default {
   name: 'TheButton',
   props: {
-    title: String,
     type: String,
     mode: String,
   },

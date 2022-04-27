@@ -19,7 +19,7 @@
       <input type="url" id="link" required v-model="resource.link" />
     </div>
     <div>
-      <TheButton type="submit" title="Submit" />
+      <TheButton type="submit"> Submit</TheButton>
     </div>
   </form>
 </template>

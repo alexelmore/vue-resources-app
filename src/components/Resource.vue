@@ -3,12 +3,9 @@
     <BaseCard>
       <header>
         <h3>{{ resource.title }}</h3>
-        <TheButton
-          type="button"
-          mode="flat"
-          @click="handleDelete(resource.id)"
-          title="Delete"
-        />
+        <TheButton type="button" mode="flat" @click="handleDelete(resource.id)"
+          >Delete</TheButton
+        >
       </header>
       <p>{{ resource.description }}</p>
       <nav><a :href="resource.link">View Resource</a></nav>
