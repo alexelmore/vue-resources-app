@@ -3,7 +3,7 @@
     <BaseCard>
       <header>
         <h3>{{ resource.title }}</h3>
-        <button @click="handleDelete(resource.id)">Delete</button>
+        <TheButton @click="handleDelete(resource.id)" title="Delete" />
       </header>
       <p>{{ resource.description }}</p>
       <nav><a :href="resource.link">View Resource</a></nav>
@@ -13,12 +13,13 @@
 
 <script>
 import BaseCard from './BaseCard.vue';
+import TheButton from './TheButton.vue';
 export default {
   name: 'Resource',
   data() {
     return {};
   },
-  components: { BaseCard },
+  components: { BaseCard, TheButton },
   props: {
     resource: Object,
   },

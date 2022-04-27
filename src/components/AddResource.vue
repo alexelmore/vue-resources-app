@@ -19,14 +19,17 @@
       <input type="url" id="link" required v-model="resource.link" />
     </div>
     <div>
-      <button>Submit</button>
+      <TheButton title="Submit" />
     </div>
   </form>
 </template>
 
 <script>
+import TheButton from '../components/TheButton.vue';
+
 export default {
   name: 'AddResource',
+  components: { TheButton },
   data() {
     return {
       resource: {
