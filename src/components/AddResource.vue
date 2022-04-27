@@ -1,26 +1,20 @@
 <template>
   <form ref="resourceForm" @submit.prevent="handleClick">
-    <div>
-      <label for="title">Resource Title:</label>
-      <input required type="text" id="title" v-model="resource.title" />
-    </div>
+    <label for="title">Resource Title:</label>
+    <input required type="text" id="title" v-model="resource.title" />
 
-    <div>
-      <label for="description">Resource Description:</label>
-      <textarea
-        name="description"
-        id="description"
-        required
-        v-model="resource.description"
-      ></textarea>
-    </div>
-    <div>
-      <label for="link">Resource Link:</label>
-      <input type="url" id="link" required v-model="resource.link" />
-    </div>
-    <div>
-      <TheButton type="submit"> Submit</TheButton>
-    </div>
+    <label for="description">Resource Description:</label>
+    <textarea
+      name="description"
+      id="description"
+      required
+      v-model="resource.description"
+    ></textarea>
+
+    <label for="link">Resource Link:</label>
+    <input type="url" id="link" required v-model="resource.link" />
+
+    <TheButton type="submit"> Submit</TheButton>
   </form>
 </template>
 
@@ -60,5 +54,42 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+form {
+  width: fit-content;
+  margin: auto;
+  min-width: 25rem;
+}
+button {
+  width: fit-content;
+  margin: 0 auto;
+  display: block;
+}
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+input {
+  margin-bottom: 0.5rem;
+}
+input,
+textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.15rem;
+  border: 1px solid #ccc;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3a0061;
+  background-color: #f7ebff;
+}
+
+.form-control {
+  margin: 1rem 0;
+}
 </style>

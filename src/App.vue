@@ -1,8 +1,8 @@
 <template>
   <TheHeader title="Vue Learning Resources App" />
-  <div>
-    <ResourcesTab @showResource="toggleResourceStatus" />
-  </div>
+
+  <ResourcesTab class="resources-tab" @showResource="toggleResourceStatus" />
+
   <div v-if="toggleResource"><AddResource @newResource="addResource" /></div>
   <div v-else>
     <ul v-for="resource in resources" :key="resource.id">
@@ -86,5 +86,9 @@ ul {
   padding: 0;
   margin: auto;
   max-width: 40rem;
+}
+.resources-tab {
+  display: flex;
+  justify-content: space-evenly;
 }
 </style>
