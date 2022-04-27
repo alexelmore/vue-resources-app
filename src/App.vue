@@ -1,8 +1,7 @@
 <template>
-  <TheHeader title="Vue Resources" />
+  <TheHeader title="Vue Learning Resources App" />
   <div>
-    <button @click="toggleResource = false">Store Resources</button>
-    <button @click="toggleResource = true">Add Resource</button>
+    <ResourcesTab @showResource="toggleResourceStatus" />
   </div>
   <div v-if="toggleResource"><AddResource @newResource="addResource" /></div>
   <div v-else>
@@ -16,6 +15,8 @@
 import AddResource from './components/AddResource.vue';
 import Resource from './components/Resource.vue';
 import TheHeader from './components/TheHeader.vue';
+
+import ResourcesTab from './components/ResourcesTab.vue';
 
 export default {
   name: 'App',
@@ -42,6 +43,7 @@ export default {
     AddResource,
     Resource,
     TheHeader,
+    ResourcesTab,
   },
   methods: {
     addResource(val) {
@@ -56,6 +58,9 @@ export default {
     },
     deleteResource(val) {
       this.resources = this.resources.filter((r) => r.id !== val);
+    },
+    toggleResourceStatus(val) {
+      this.toggleResource = val;
     },
   },
 };
