@@ -5,7 +5,7 @@
   </div>
   <div v-if="toggleResource"><AddResource @newResource="addResource" /></div>
   <div v-else>
-    <ul v-for="resource in resources" :key="resource">
+    <ul v-for="resource in resources" :key="resource.id">
       <Resource :resource="resource" @removeResource="deleteResource" />
     </ul>
   </div>
@@ -47,7 +47,7 @@ export default {
       if (isPresent === undefined) {
         this.resources.push(val);
       } else {
-        alert(`You already a resource with this id: ${val.id}`);
+        alert(`You already have a resource with this id: ${val.id}`);
       }
     },
     deleteResource(val) {
@@ -58,4 +58,24 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin: auto;
+  max-width: 40rem;
+}
 </style>
