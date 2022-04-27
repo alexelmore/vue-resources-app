@@ -1,22 +1,24 @@
 <template>
   <li>
-    <div>
+    <BaseCard>
       <header>
         <h3>{{ resource.title }}</h3>
         <button @click="handleDelete(resource.id)">Delete</button>
       </header>
-    </div>
-    <p>{{ resource.description }}</p>
-    <nav><a :href="resource.link">View Resource</a></nav>
+      <p>{{ resource.description }}</p>
+      <nav><a :href="resource.link">View Resource</a></nav>
+    </BaseCard>
   </li>
 </template>
 
 <script>
+import BaseCard from './BaseCard.vue';
 export default {
   name: 'Resource',
   data() {
     return {};
   },
+  components: { BaseCard },
   props: {
     resource: Object,
   },

@@ -1,4 +1,5 @@
 <template>
+  <TheHeader title="Vue Resources" />
   <div>
     <button @click="toggleResource = false">Store Resources</button>
     <button @click="toggleResource = true">Add Resource</button>
@@ -14,6 +15,8 @@
 <script>
 import AddResource from './components/AddResource.vue';
 import Resource from './components/Resource.vue';
+import TheHeader from './components/TheHeader.vue';
+
 export default {
   name: 'App',
   data() {
@@ -38,6 +41,7 @@ export default {
   components: {
     AddResource,
     Resource,
+    TheHeader,
   },
   methods: {
     addResource(val) {
